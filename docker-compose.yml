@@ -3,10 +3,14 @@ services:
     build: .
     command: python -u app.py
     ports:
-      - "5000:5000"
+      - "${PORT}:${PORT}"
     volumes:
       - .:/app
-    links:
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - MONGO_URI=${MONGO_URI}
+      - PORT=${PORT}
+    depends_on:
       - db
 
 
