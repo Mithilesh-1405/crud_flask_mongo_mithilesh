@@ -1,6 +1,8 @@
 import os
+from dotenv import load_dotenv
 from decouple import config
-
+load_dotenv()
 class Config:
-    SECRET_KEY = config('SECRET_KEY', default='secret-key')
-    MONGO_URI= config('MONGO_URI', default='mongodb+srv://user:user@cluster0.q4jwf23.mongodb.net/crud_db')
+    SECRET_KEY = os.getenv('SECRET_KEY')
+    MONGO_URI= os.getenv('MONGO_URI')
+    PORT = int(os.getenv('PORT', 5000))  

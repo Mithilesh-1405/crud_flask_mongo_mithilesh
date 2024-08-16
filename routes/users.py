@@ -5,8 +5,11 @@ from marshmallow import ValidationError
 from flask import Blueprint
 from utils.inputValidators import user_schema
 from bson.objectid import ObjectId
-
+import jwt
+import datetime
 users_bp= Blueprint('users', __name__)
+
+
 @users_bp.route('/')
 def landingPage():
     return "Welcome to Flask Application for CRUD operations on MongoDB"
@@ -35,7 +38,7 @@ def getAllUsers():
             "users":users
         },200
     
-# Get specific user
+# Get a specific user
 @users_bp.route('/users/<id>', methods=['GET'])
 def getSpecificUser(id):
     from app import mongo

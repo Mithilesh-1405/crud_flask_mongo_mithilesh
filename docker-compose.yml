@@ -17,7 +17,5 @@ services:
       - MONGO_INITDB_DATABASE=crud_db
       - MONGO_INITDB_ROOT_USERNAME=user
       - MONGO_INITDB_ROOT_PASSWORD=user
-    volumes:
-      - ./init-db.js:/docker-entrypoint-initdb.d/init-db.js:ro
     ports:
       - 27017:27017
