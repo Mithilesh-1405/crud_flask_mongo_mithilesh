@@ -1,9 +1,13 @@
 # How to start the project?
 
 1) Clone this repository ( please note that cloning this repo has got nothing to do with running the project)
-2) In your terminal hit `docker pull mithi142002/crud_flask_app:latest`
-3) `docker run -d -p 5000:5000 mithi142002/crud_flask_app:latest`
-4) Visit `http://localhost:5000/` to view the project
+   
+3) In your terminal hit
+   `docker pull mithi142002/crud_flask_app:latest`
+   
+4) `docker run -d -p 5000:5000 mithi142002/crud_flask_app:latest`
+   
+6) Visit `http://localhost:5000/` to view the project
 
 #Testing API endpoints using Postman
 
