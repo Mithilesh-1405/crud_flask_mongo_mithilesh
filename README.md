@@ -2,10 +2,11 @@
 
 1) Clone this repository ( please note that cloning this repo has got nothing to do with running the project)
    
-3) In your terminal hit
+3) In your terminal type
    `docker pull mithi142002/crud_flask_app:latest`
    
-4) `docker run -d -p 5000:5000 mithi142002/crud_flask_app:latest`
+4) Next type
+   `docker run -d -p 5000:5000 mithi142002/crud_flask_app:latest`
    
 6) Visit `http://localhost:5000/` to view the project
 
