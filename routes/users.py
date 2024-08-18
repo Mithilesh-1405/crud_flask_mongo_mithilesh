@@ -17,7 +17,7 @@ def landingPage():
 def getAllUsers():
     from app import mongo
     
-    allUsers = mongo.db.users.find({})
+    allUsers = list(mongo.db.users.find({}))
     if not allUsers:
         return jsonify({
             "message":"No users found!"

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask
 from flask_pymongo import PyMongo
 from routes.users import users_bp
 from config import Config

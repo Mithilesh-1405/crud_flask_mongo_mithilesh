@@ -1,6 +1,43 @@
+# services:
+#   app:
+#     build: .
+#     command: python -u app.py
+#     ports:
+#       - "5000:5000"
+#     volumes:
+#       - .:/app
+#     environment:
+#       - SECRET_KEY=${SECRET_KEY}
+#       - MONGO_URI = ${MONGO_URI}
+#       - PORT=${PORT}
+#     depends_on:
+#       - db
+#     networks:
+#       - app-network
+
+#   db:
+#     image: mongo:latest
+#     hostname: crud_mongodb
+#     environment:
+#       - MONGO_INITDB_DATABASE=crud_db
+#       - MONGO_INITDB_ROOT_USERNAME=user
+#       - MONGO_INITDB_ROOT_PASSWORD=user
+#     command: ["mongod", "--auth"]
+#     networks:
+#       - app-network
+#     # volumes:
+#     #   - "/data/db/:/data/db"
+#     ports:
+#       - "27017:27017"
+
+# networks:
+#   app-network:
+#     driver: bridge
+
 services:
   app:
-    build: .
+    # build: .
+    image: mithi142002/crud_flask_app:latest
     command: python -u app.py
     ports:
       - "${PORT}:${PORT}"
@@ -10,16 +47,30 @@ services:
       - SECRET_KEY=${SECRET_KEY}
       - MONGO_URI=${MONGO_URI}
       - PORT=${PORT}
+    networks:
+      - app-network
     depends_on:
-      - db
-
+      db:
+        condition: service_healthy
 
   db:
     image: mongo:latest
     hostname: crud_mongodb
     environment:
-      - MONGO_INITDB_DATABASE=crud_db
       - MONGO_INITDB_ROOT_USERNAME=user
       - MONGO_INITDB_ROOT_PASSWORD=user
+      - MONGO_INITDB_DATABASE=crud_db
+    command: ["mongod","--bind_ip", "0.0.0.0"]
     ports:
       - 27017:27017
+    networks:
+      - app-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+networks:
+  app-network:
+    driver: bridge
