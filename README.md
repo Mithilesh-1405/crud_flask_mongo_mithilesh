@@ -12,7 +12,7 @@
 
 ## Testing API endpoints using Postman
 
-1) Open the POSTMAN link shared in the submission file to find all the API Endpoints along with their description.
+1) Open this POSTMAN link `https://www.postman.com/aviation-meteorologist-54780197/workspace/api/collection/22901527-92ef5949-5406-486c-9717-cf239ebba113` 
 
 ## Suggested steps to follow to check the endpoint functionality
 
