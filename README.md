@@ -16,7 +16,9 @@
 
 ## Suggested steps to follow to check the endpoint functionality
 
-1) once opened postman, Click on Homepage endpoint in the sidebar and click send.
+### A sample raw data is filled in the endpoints data, change accordingly.
+
+1) Once you open postman, Click on Homepage endpoint in the sidebar and click send.
 2) getAllUsers endpoint
 3) Add a user endpoint
 4) getSpecificUser endpoint
