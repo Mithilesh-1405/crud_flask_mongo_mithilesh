@@ -9,11 +9,11 @@
    
 6) Visit `http://localhost:5000/` to view the project
 
-#Testing API endpoints using Postman
+## Testing API endpoints using Postman
 
 1) Open the POSTMAN link shared in the submission file to find all the API Endpoints along with their description.
 
-Suggested steps to follow to check the endpoint functionality
+## Suggested steps to follow to check the endpoint functionality
 
 1) once opened postman, Click on Homepage endpoint in the sidebar and click send.
 2) getAllUsers endpoint
